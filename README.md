@@ -39,7 +39,8 @@ hängen sie zusammen?)!
 
 **Implementieren Sie Ihre Klassenstruktur in C++.**
 
-Nutzen Sie das UML-Diagramm aus Aufgabe 01 und implementieren es in C++.
+Nutzen Sie das UML-Diagramm aus Aufgabe 01 und implementieren es in C++. Modifizieren Sie ggf. Ihren bestehenden Code
+bzw. den Code aus diesem Repository, sodass er zum UML-Diagramm passt.
 
 Ziel ist es, am Ende folgende Funktionalität zu haben:
 
