@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(prog3_ueb_asteroids_lab01)
+project(prog3_ueb_asteroids_lab02)
 set(CMAKE_CXX_STANDARD 17)
 
 set(RAYLIB_VERSION 4.5.0)
