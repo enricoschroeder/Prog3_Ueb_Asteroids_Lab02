@@ -5,13 +5,13 @@
 class Spaceship
 {
 private:
-    inline static const std::string _texturePath = "./resources/spaceship.png";
-    const float _movementSpeed = 4.0f;
-    const float _rotationSpeed = 4.5f;
+    inline static const std::string texturePath_ = "./resources/spaceship.png";
+    const float movementSpeed_ = 4.0f;
+    const float rotationSpeed_ = 4.5f;
 
-    raylib::Vector2 _pos;
-    raylib::Texture2D _tex;
-    float _rot;
+    raylib::Vector2 pos_;
+    raylib::Texture2D tex_;
+    float rot_;
 
 public:
     Spaceship(raylib::Vector2 initialPos);

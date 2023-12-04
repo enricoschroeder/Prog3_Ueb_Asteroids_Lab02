@@ -1,40 +1,40 @@
 #include <spaceship.h>
 
 Spaceship::Spaceship(raylib::Vector2 initialPos)
-: _pos(initialPos)
-, _rot(0.0f)
+: pos_(initialPos)
+, rot_(0.0f)
 {
-    _tex.Load(_texturePath);
+    tex_.Load(texturePath_);
 }
 
 void Spaceship::draw()
 {
     // Easy version: Draw object with rotation around origin (top left)
-    //_tex.Draw(_pos, _rot);
+    //_tex.Draw(pos_, rot_);
 
     // Slightly more advanced version: Draw object with rotation around center
-    raylib::Vector2 origin = raylib::Vector2(_tex.GetWidth() / 2, _tex.GetWidth() / 2);
-    raylib::Rectangle sourceRect = { 0.f, 0.f, static_cast<float>(_tex.GetWidth()), static_cast<float>(_tex.GetHeight()) };
-    raylib::Rectangle destRect = { _pos.GetX(), _pos.GetY(), static_cast<float>(_tex.GetWidth()), static_cast<float>(_tex.GetHeight()) };
-    _tex.Draw(sourceRect, destRect, origin, _rot);
+    raylib::Vector2 origin = raylib::Vector2(tex_.GetWidth() / 2, tex_.GetWidth() / 2);
+    raylib::Rectangle sourceRect = {0.f, 0.f, static_cast<float>(tex_.GetWidth()), static_cast<float>(tex_.GetHeight()) };
+    raylib::Rectangle destRect = {pos_.GetX(), pos_.GetY(), static_cast<float>(tex_.GetWidth()), static_cast<float>(tex_.GetHeight()) };
+    tex_.Draw(sourceRect, destRect, origin, rot_);
 }
 
 void Spaceship::update()
 {
     if(IsKeyDown(KEY_W))
-        move(raylib::Vector2{0.f, -_movementSpeed}.Rotate(DEG2RAD * _rot)); // Attention: Rotate parameter is radians, not degrees!
+        move(raylib::Vector2{0.f, -movementSpeed_}.Rotate(DEG2RAD * rot_)); // Attention: Rotate parameter is radians, not degrees!
     if(IsKeyDown(KEY_A))
-        rotate(-_rotationSpeed);
+        rotate(-rotationSpeed_);
     if(IsKeyDown(KEY_D))
-        rotate(_rotationSpeed);
+        rotate(rotationSpeed_);
 }
 
 void Spaceship::rotate(float deg)
 {
-    _rot += deg;
+    rot_ += deg;
 }
 
 void Spaceship::move(raylib::Vector2 moveVec)
 {
-    _pos += moveVec;
+    pos_ += moveVec;
 }

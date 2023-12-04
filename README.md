@@ -29,7 +29,7 @@ auf einem Blatt Papier.
 Stellen Sie sich für Ihre Klassenstruktur insbesondere folgende Fragen:
 
 - Was haben alle Ihre Objekte im Spiel (z.B. das Raumschiff, Asteroiden und Projektile) gemeinsam? All das sollte in
-  eine geeignete Elternklasse ausgelagert werden.
+  eine geeignete Elternklasse (z.B. namens `GameObject`) ausgelagert werden.
 - Wer kümmert sich um die Verwaltung aller Objekte sowie um Ihre Spiellogik?
 
 Fügen Sie Ihrem Protokoll das UML-Diagramm hinzu und erläutern Sie es kurz (was machen die einzelnen Klassen und wie
@@ -44,10 +44,15 @@ bzw. den Code aus diesem Repository, sodass er zum UML-Diagramm passt.
 
 Ziel ist es, am Ende folgende Funktionalität zu haben:
 
-- Ein vom Spieler steuerbares Raumschiff, das Projektile verschießen kann.
+- Ein vom Spieler steuerbares Raumschiff, das Projektile verschießen kann (noch ohne korrekte Bewegungsphysik, d.h. Sie
+  können einfach die Position direkt mittels Tastatureingaben verändern).
 - Umherfliegende Asteroiden.
 - Grundlegende Spiellogik (Lebensenergie des Raumschiffs, Punkte). Hinweis: Die Spiellogik muss nur vorbereitet, aber
   nicht vollständig implementiert sein (dafür benötigen wir Kollisionen, um die wir uns später kümmern).
+
+Sie werden zwangsläufig an irgendeiner Stelle sämtliche Spielobjekte in einer Liste verwalten müssen. Ziel ist es, dass
+sie nur eine einzelne Liste haben, in der Sie alle Objekte verwalten (z.B. einen std::vector<GameObject*>). Sie sollten
+nicht für jede Objektart (Asteroiden, Projektile etc.) eine eigene Liste haben!
 
 Fügen Sie den Code ihrem Protokoll hinzu! Falls Sie bei der Implementierung festellen, dass Sie Änderungen an Ihrer
 Klassenstruktur bzw. am UML-Diagramm benötigen, beschreiben Sie diese im Protokoll.
