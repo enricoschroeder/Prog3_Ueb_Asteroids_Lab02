@@ -14,7 +14,7 @@ void Spaceship::draw()
 
     // Slightly more advanced version: Draw object with rotation around center
     raylib::Vector2 origin = raylib::Vector2(tex_.GetWidth() / 2, tex_.GetWidth() / 2);
-    raylib::Rectangle sourceRect = {0.f, 0.f, static_cast<float>(tex_.GetWidth()), static_cast<float>(tex_.GetHeight()) };
+    raylib::Rectangle sourceRect = {0.0, 0.0, static_cast<float>(tex_.GetWidth()), static_cast<float>(tex_.GetHeight()) };
     raylib::Rectangle destRect = {pos_.GetX(), pos_.GetY(), static_cast<float>(tex_.GetWidth()), static_cast<float>(tex_.GetHeight()) };
     tex_.Draw(sourceRect, destRect, origin, rot_);
 }
@@ -22,7 +22,7 @@ void Spaceship::draw()
 void Spaceship::update()
 {
     if(IsKeyDown(KEY_W))
-        move(raylib::Vector2{0.f, -movementSpeed_}.Rotate(DEG2RAD * rot_)); // Attention: Rotate parameter is radians, not degrees!
+        move(raylib::Vector2{0.0, -movementSpeed_}.Rotate(DEG2RAD * rot_)); // Attention: Rotate parameter is radians, not degrees!
     if(IsKeyDown(KEY_A))
         rotate(-rotationSpeed_);
     if(IsKeyDown(KEY_D))
